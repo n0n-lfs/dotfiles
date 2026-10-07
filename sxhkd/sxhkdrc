@@ -1,0 +1,121 @@
+# apps
+super + Return
+    alacritty
+
+super + f
+    firefox
+
+super + t
+    Telegram
+
+
+# bluetooth
+super + b
+    bluetoothctl connect 00:A4:1C:AF:6F:FA
+
+
+# date & time
+super + c
+    notify-send -a "Clock" -i appointment-soon -h string:x-dunst-stack-tag:Clock "Time" "$(date '+%d-%m-%Y %H:%M:%S')"
+
+
+# volume
+super + equal
+    volume up
+
+super + minus
+    volume down
+
+super + shift + m
+    volume mute
+
+
+# flameshot
+Print
+    flameshot gui
+
+# rofi
+super + d
+    rofi -show drun
+
+
+# change keyboard layout
+# Polish
+F1
+    setxkbmap -layout pl
+
+
+# Russian
+F2
+    setxkbmap -layout ru
+
+
+# reload bspwm
+super + ctrl + r
+    bspc wm -r
+
+
+# exit bspwm
+super + shift + q
+    bspc quit
+
+
+# close
+super + q
+    bspc node -c
+
+
+# reboot & shutdown
+super + F11
+    doas /usr/bin/systemctl reboot
+
+super + F12
+    doas /usr/bin/systemctl poweroff
+
+
+# focus spatially
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+
+# swap spatially
+super + alt + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+
+# desktops
+super + {1-9}
+    bspc desktop -f '^{1-9}'
+
+super + shift + {1-9}
+    bspc node -d '^{1-9}'
+
+
+# floating
+super + shift + space
+    bspc node -t ~floating
+
+
+# normal
+super + shift + t
+    bspc node -t tiled
+
+
+# fullscreen
+super + m
+    bspc node -t ~fullscreen
+
+
+# preselection direction
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+
+# cancel preselection
+super + ctrl + space
+    bspc node -p cancel
+
+
+# reload sxhkd
+super + Escape + r
+    pkill -USR1 -x sxhkd
